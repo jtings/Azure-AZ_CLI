@@ -1,0 +1,7 @@
+az vm extension set \
+  --resource-group 7ac328dc-5fde-423a-9692-6b550d184a1e \
+  --vm-name myVM \
+  --name CustomScriptExtension \
+  --publisher Microsoft.Compute \
+  --settings '{"fileUris":["https://raw.githubusercontent.com/MicrosoftDocs/mslearn-welcome-to-azure/master/configure-iis.ps1"]}' \
+  --protected-settings '{"commandToExecute": "powershell -ExecutionPolicy Unrestricted -File configure-iis.ps1"}'
